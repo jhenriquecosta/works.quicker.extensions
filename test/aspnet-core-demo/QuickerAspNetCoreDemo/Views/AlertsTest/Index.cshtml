@@ -1,0 +1,25 @@
+@using Quicker.Web.Mvc.Alerts
+@inject IAlertMessageRendererManager AlertMessageRendererManager
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section styles{
+    <link href="~/lib/toastr/toastr.css" rel="stylesheet" />
+}
+
+<h2>Alerts test page</h2>
+
+
+<div id="QuickerPageAlerts">
+    @Html.Raw(AlertMessageRendererManager.Render(AlertDisplayType.PageAlert))
+</div>
+
+
+@section scripts{
+    <script src="~/lib/toastr/toastr.min.js" type="text/javascript"></script>
+    <script src="~/Quicker/Framework/scripts/libs/quicker.toastr.js" type="text/javascript"></script>
+
+    @Html.Raw(AlertMessageRendererManager.Render(AlertDisplayType.Toastr))
+}

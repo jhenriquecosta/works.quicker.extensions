@@ -1,0 +1,8 @@
+{
+  "culture": "tr",
+  "texts": {
+    "HelloWorld": "Merhaba Dünya!",
+    "WelcomeMessage": "QUICKER AspNet Core Demo uygulamasına hoşgeldiniz.",
+    "AboutDescription": "Bu uygulama, ASP.NET Core ve QUICKER framework ile geliştirilmiş örnek bir uygulamadır."
+  }
+}

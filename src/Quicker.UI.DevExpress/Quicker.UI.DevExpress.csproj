@@ -1,0 +1,73 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\common.props" />
+	<Import Project="..\..\configureawait.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<UseWindowsForms>true</UseWindowsForms>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<AssemblyName>Quicker.UI.DevExpress</AssemblyName>
+		<PackageId>Quicker.UI.DevExpress</PackageId>
+		<PackageTags>asp.net;asp.net mvc;boilerplate;application framework;web framework;framework;domain driven design</PackageTags>
+		<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+		<GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+		<GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+		<GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+		<GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+		<GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Description>Quicker.UI.DevExpress</Description>
+		<RootNamespace>Quicker</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="UI\DevExpress\Components\Grids\**" />
+	  <EmbeddedResource Remove="UI\DevExpress\Components\Grids\**" />
+	  <None Remove="UI\DevExpress\Components\Grids\**" />
+	  <Page Remove="UI\DevExpress\Components\Grids\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Remove="UI\DevExpress\Extensions\Extensions.QuickerTreeView.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Quicker.UI.Common\Quicker.UI.Common.csproj" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="DevExpress.Win.Design" Version="22.2.*-*" />
+		<PackageReference Include="DevExpress.Data" Version="22.2.3" />
+		<PackageReference Include="DevExpress.Win" Version="22.2.*-*" />
+		<PackageReference Include="DevExpress.Win.BonusSkins" Version="22.2.3" />
+		<PackageReference Include="DevExpress.Win.RichEdit" Version="22.2.3" />
+		<PackageReference Include="DevExpress.Demos.Core" Version="22.2.3" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<PackageReference Update="Fody" Version="6.6.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+		<PackageReference Update="Microsoft.SourceLink.GitHub" Version="1.1.1" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Folder Include="UI\DevExpress\Components\Forms\Services\" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+	  <Compile Update="UI\DevExpress\Components\Inputs\Controls\QuickerCheckEdit.cs" />
+	  <Compile Update="UI\DevExpress\Controls\QTaskBarFormCrud.cs">
+	    <SubType>UserControl</SubType>
+	  </Compile>
+	  <Compile Update="UI\DevExpress\Controls\QTextEdit.cs">
+	    <SubType>Component</SubType>
+	  </Compile>
+	</ItemGroup>
+
+</Project>
